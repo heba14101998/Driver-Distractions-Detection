@@ -68,7 +68,6 @@ c=db.cursor()
 
 ##################### Model intialization ##########################
 
-
 model = Sequential()
 
 model.add(Conv2D(filters=64, kernel_size=2, padding='same', activation='relu', input_shape=(224,224,1), kernel_initializer='glorot_normal'))
@@ -100,8 +99,6 @@ def path_to_tensor(img_path):
     x = image.img_to_array(img)
     # convert 3D tensor to 4D tensor with shape (1, 224, 224, 1) and return 4D tensor
     return np.expand_dims(x, axis=0)
-
-
 
 def page_three():
     window_3 = Toplevel()
@@ -147,8 +144,6 @@ def page_three():
                      )
     
     btpause.place(relx=0.06,rely=0.8)
-
-
 ####################################################
     btStop = Button(window_3,text='Stop',
                     width=30,height=3,
@@ -158,16 +153,9 @@ def page_three():
                     command=startShow_2)
     btStop.place(relx=0.55,rely=0.8)
     #window_3.mainloop()
-    
-    ###################model
     ##############################Open Camera######################################
-
-
-
     cam = cv2.VideoCapture(0)
-
     cv2.namedWindow("test")
-
     global img_counter 
     global Counter
     global k
@@ -227,8 +215,6 @@ def page_three():
             break
         else:
             # SPACE pressed
-            
-            
             ############ Save The Image######################
             img_name = "opencv_frame_{}.png".format(img_counter)
             cv2.imwrite(img_name, frame)
@@ -251,8 +237,4 @@ def page_three():
                 GPIO.output(buzzer,GPIO.LOW)
                 print ("No Beep")
                 sleep(0.5)
-                
-
             distractionCounter[distractioType] += 1
-
-
