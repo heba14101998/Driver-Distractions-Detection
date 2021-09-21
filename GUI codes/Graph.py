@@ -6,8 +6,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 #from pandas import DataFrame
-
-
 ####################### For Database #############
 from datetime import date
 from datetime import datetime
@@ -18,8 +16,6 @@ Classes = [ 'safe driving', ' texting - right', 'talking on the phone - right',
        'texting - left', 'talking on the phone - left', 'operating the radio',
        'drinking', 'reaching behind', 'hair and makeup', 'talking to passenger']
 
-
-
 def page_five():
     windowGr = Tk()
     windowGr.title('Driving Form')
@@ -29,13 +25,7 @@ def page_five():
     
     global Classes
 
-
-   
-
-####################################################
 ##################################For Graphic window ###############################################
-
-###############################################
     def exittt():
         
         windowGr.destroy()
@@ -92,8 +82,7 @@ def page_five():
     btex.place(relx=0.84,rely=0.87)
     
     
-    #############################################
-    ###################Execute data from database###########################
+###############################################Execute data from database###############################################
 
     # connection to database#
 
@@ -237,8 +226,6 @@ def page_five():
 
     tree.pack()
     #########################################
-    
-    
     x="SELECT  Total_counter,safe_driving From distraction WHERE tdate = %s"
     y=(today,)
     c.execute(x,y)
@@ -264,5 +251,4 @@ def page_five():
     canvas.draw()
 #######################################################    
     windowGr.mainloop()
-    #########################################################
     
